@@ -4,7 +4,7 @@ function ejercicio1(cantidad, precio, descuento) {
 
 
 function ejercicio2(poblacion, sueldo) {
-    return (poblacion === "Bilbao" || poblacion === "Madrid") && sueldo >= 1000 && sueldo <= 1500;
+    return (poblacion == "Bilbao" || poblacion == "Madrid") && sueldo >= 1000 && sueldo <= 1500;
 }
 
 
@@ -18,8 +18,8 @@ function ejercicio4(var1) {
 }
 
 
-function ejercicio5(cantidad) {
-    return Math.ceil(cantidad / 10);
+function ejercicio5(producto) {
+    return parseInt(producto) + (producto % 2 > 0 ? 1 : 0);
 }
 
 function ejercicio6(nombre) {
