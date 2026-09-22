@@ -11,12 +11,12 @@ const captcha = function() {
 
     // operadores aleatorios (+, -, *)
     const operadores = ["+", "-", "*"];
-    operador = operadores[Math.floor(Math.random() * operadores.length)];
+    operador = operadores[Math.trunc(Math.random() * operadores.length)];
 
     // distrubuir los operandos y operadores en cada span correspondiente
-    document.getElementById("op1").value = operando1;
-    document.getElementById("op2").value = operando2;
-    document.getElementById("oper").value = operador;
+    document.getElementById("op1").innerHTML = operando1;
+    document.getElementById("op2").innerHTML = operando2;
+    document.getElementById("oper").innerHTML = operador;
 };
 
 // ejecutar la función captcha
