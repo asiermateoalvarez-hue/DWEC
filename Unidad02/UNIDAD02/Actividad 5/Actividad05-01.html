@@ -1,26 +1,62 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Saldo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<body class="container mt-5" style="max-width: 500px;">
+<body>
+    <script>
+        const efect = {
+            saldo:0,
+            ingresar : function(cantidad) {
+                this.saldo += cantidad;
+            },
+            gastar(cantidad){
+                this.saldo -= cantidad;
+            }
+        }
 
-    <div>
-        <div class="d-flex align-items-center gap-3 mb-2">
-            <label for="cantidad" class="form-label mb-0 small">Cantidad:</label>
-            <input type="number" id="cantidad" class="form-control form-control-sm">
-        </div>
-        <div class="mb-2">
-            <button class="btn btn-primary btn-sm" onclick="ingresarDinero()">Ingresar</button>
-            <button class="btn btn-primary btn-sm" onclick="gastarDinero()">Gastar</button>
-        </div>
-        
-            <h1 id="saldo" class="text-primary"></h1>
+        function Efectivo(){
+            this.saldo = 0;
+            this.ingresar =  function(cantidad) {
+                this.saldo += cantidad;
+            }
+            this.gastar = function(cantidad){
+                this.saldo -= cantidad;
+            }
+        }
+        /* Alternativa con el objeto sería*/
+        // const efectivo = efect;
+         /* Alternativa con la función constructora*/
+        const efectivo = new Efectivo();
 
-        <script src="Actividad5.js"></script>
-    </div>
+        efectivo.saldo = +prompt("Saldo Inicial:");
+        console.log(`Efectivo Inicial : ${efectivo.saldo}`);
+
+        let resp = prompt("[I]ngreso o [G]asto");
+        while (resp){
+            if (resp == "I" || resp == "i"){
+                let cant = +prompt("Cantidad");
+                efectivo.ingresar(cant);
+                console.log(`Ingresados ${cant}€ : Saldo ${efectivo.saldo}`);
+            } else if (resp == "G" || resp == "g") {
+                let cant = +prompt("Cantidad");
+                if (cant > efectivo.saldo){
+                /* Si la cantidad es superior al saldo que queda, visualiza el mensaje de error*/
+                   alert(`Sólo quedan ${efectivo.saldo}€`);
+                } else {
+                    efectivo.gastar(cant);
+                    console.log(`Gastados ${cant}€ : Saldo ${efectivo.saldo}`);
+                }            
+            }
+            else {
+                alert("Debe ser I, i o G o g");
+            }
+            resp = prompt("[I]ngreso o [G]asto");
+        }
+         /* Visualiza el efectivo final*/
+        console.log(`Efectivo Final : ${efectivo.saldo}`);
+    </script>
 </body>
 </html>
