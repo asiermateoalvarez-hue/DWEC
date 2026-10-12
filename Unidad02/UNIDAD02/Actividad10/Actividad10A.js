@@ -1,90 +1,64 @@
+
 class Persona {
     #nombre;
     #apellido1;
     #apellido2;
     #edad;
 
-    #numeroCreditosMatriculados;
-    
-    // GETTERS
-
-    get nombre() {
-        return this.#nombre;
-    }
-    get apellido1() {
-        return this.#apellido1;
-    }
-    get apellido2() {
-        return this.#apellido2;
-    }
-    get edad() {
-        return this.#edad;
-    }
-    get numeroCreditosMatriculados() {
-        return this.#numeroCreditosMatriculados;
-    }
-
-    //SETTERS
-    
-    set nombre(nombre) {
+    constructor(nombre, apellido1, apellido2, edad) {
         this.#nombre = nombre;
-    }
-    set apellido1(apellido1) {
         this.#apellido1 = apellido1;
-    }
-    set apellido2(apellido2) { 
-       this.#apellido2 = apellido2;
-    }
-    set edad(edad) { 
+        this.#apellido2 = apellido2;
         this.#edad = edad;
     }
-    set numeroCreditosMatriculados(creditos) { 
-        this.#numeroCreditosMatriculados = creditos;
-    }
+
+    // GETTERS
+    get nombre() { return this.#nombre; }
+    get apellido1() { return this.#apellido1; }
+    get apellido2() { return this.#apellido2; }
+    get edad() { return this.#edad; }
+
+    // SETTERS
+    set nombre(nombre) { this.#nombre = nombre; }
+    set apellido1(apellido1) { this.#apellido1 = apellido1; }
+    set apellido2(apellido2) { this.#apellido2 = apellido2; }
+    set edad(edad) { this.#edad = edad; }
 }
 
-class Profesor {
-    #nombre;
-    #apellido1;
-    #apellido2;
-    #edad;
+class Alumno extends Persona {
+    #numeroCreditosMatriculados;
 
+    constructor(nombre, apellido1, apellido2, edad, numeroCreditosMatriculados) {
+        super(nombre, apellido1, apellido2, edad);
+        this.#numeroCreditosMatriculados = numeroCreditosMatriculados;
+    }
+
+    get numeroCreditosMatriculados() { return this.#numeroCreditosMatriculados; }
+    set numeroCreditosMatriculados(creditos) { this.#numeroCreditosMatriculados = creditos; }
+}
+
+class Profesor extends Persona {
     #numeroAsignaturasImpartidas;
 
-    // GETTERS
-
-    get nombre() {
-        return this.#nombre;
-    }
-    get apellido1() {
-        return this.#apellido1;
-    }
-    get apellido2() {
-        return this.#apellido2;
-    }
-    get edad() {
-        return this.#edad;
-    }
-    get numeroAsignaturasImpartidas() {
-        return this.#numeroAsignaturasImpartidas;
+    constructor(nombre, apellido1, apellido2, edad, numeroAsignaturasImpartidas) {
+        super(nombre, apellido1, apellido2, edad);
+        this.#numeroAsignaturasImpartidas = numeroAsignaturasImpartidas;
     }
 
-    //SETTERS
-    
-    set nombre(nombre) {
-        this.#nombre = nombre;
-    }
-    set apellido1(apellido1) {
-        this.#apellido1 = apellido1;
-    }
-    set apellido2(apellido2) { 
-       this.#apellido2 = apellido2;
-    }
-    set edad(edad) { 
-        this.#edad = edad;
-    }
-    set numeroAsignaturasImpartidas(creditos) { 
-        this.#numeroAsignaturasImpartidas = creditos;
-    }
+    get numeroAsignaturasImpartidas() { return this.#numeroAsignaturasImpartidas; }
+    set numeroAsignaturasImpartidas(asignaturas) { this.#numeroAsignaturasImpartidas = asignaturas; }
 }
 
+// PRUEBAS
+const persona = new Persona("Ana", "García", "López", 40);
+const alumno = new Alumno("Luis", "Pérez", "Ruiz", 20, 60);
+const profesor = new Profesor("Marta", "Sanz", "Gil", 45, 4);
+
+console.log(persona);
+console.log(alumno.nombre, alumno.apellido1, alumno.apellido2, alumno.edad, alumno.numeroCreditosMatriculados);
+console.log(profesor.nombre, profesor.apellido1, profesor.apellido2, profesor.edad, profesor.numeroAsignaturasImpartidas);
+
+
+alumno.numeroCreditosMatriculados = 72;
+profesor.edad = 46;
+console.log(alumno.numeroCreditosMatriculados, profesor.edad);
