@@ -324,7 +324,12 @@
         });
 
         document.getElementById("btn16").addEventListener("click", function() {
-            document.getElementById("checkboxTerminosYCondiciones").checked = true;
+            if (document.getElementById("checkboxTerminosYCondiciones").checked != true){
+                document.getElementById("checkboxTerminosYCondiciones").checked = true;
+            } else {
+                document.getElementById("checkboxTerminosYCondiciones").checked = false;
+            }
+            
         });
 
     </script>
