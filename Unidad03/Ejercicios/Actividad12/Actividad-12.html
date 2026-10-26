@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,21 +20,20 @@
   </head>
 
   <body>
-    <div class="container m-5">
+    <div class="container my-5">
       <div class="row justify-content-center align-items-center pb-3 d-flex flex-column text-center">
-        <button id="btnOscuro" class="btn btn-primary">Fondo Oscuro</button>
-        <button id="btnClaro" class="btn btn-info">Fondo Claro</button>
         <h1>Monumentos para ver en Bizkaia</h1>
+        <div class="d-flex justify-content-center">
+          <button id="btnOscuro" class="btn bg-dark text-white">Fondo Oscuro</button>
+          <button id="btnClaro" class="btn bg-white text-dark">Fondo Claro</button>
+        </div>
       </div>
-      <div class="row bt-5">
+      <div class="row bt-5 justify-content-center">
         <div class="card-columns" id="cards"></div>
       </div>
     </div>
     <script src="Actividad-12.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- Etiquetas script para que Bootstrap funcione correctamente en este ejercicio. 
-         Además de los CSS insertados arriba-->
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -53,12 +51,18 @@
     ></script>
   </body>
   <style>
+      body {
+        transition: background-color 0.5s ease;
+      }
       .dark {
         background-color: black;
-
-        h1 {
-          color: white;
-        }
+      }
+      .dark h1 {
+        color: white;
+      }
+      .dark .card {
+        background-color: #222;
+        color: white;
       }
   </style>
 </html>
