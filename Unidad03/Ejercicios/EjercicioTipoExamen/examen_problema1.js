@@ -1,6 +1,49 @@
 /* Codigo del alumno */
 
+class Concesionario {
+    constructor() {
+        var nombre;
+        var direccion;
+        const automoviles;
+    }
 
+    get nombre() {
+        return this.nombre;
+    }
+
+    get direccion() {
+        return this.direccion;
+    }
+
+    get automoviles() {
+        return this.automoviles;
+    }
+
+    
+}
+
+class Automovil {
+    constructor(){
+        var matricula;
+        var coche;
+        var modelo;
+    }
+}
+
+class Coche {
+    constructor() {
+        const potencia;
+        const puertas;
+        const capacidadMaletero;
+    }
+}
+
+class Motocicleta {
+    constructor() {
+        let portaequipajes;
+        const cilindrada;
+    }
+}
 
 
 /* Fin codigo del alumno */
