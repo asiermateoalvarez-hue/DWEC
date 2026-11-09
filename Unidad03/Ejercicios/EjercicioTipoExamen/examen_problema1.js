@@ -2,38 +2,38 @@
 
 class Concesionario {
     constructor(nombre, direccion) {
-        this._nombre = nombre;
-        this._direccion = direccion;
-        this._automoviles = [];
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.automoviles = [];
     }
 
     get nombre() {
-        return this._nombre;
+        return this.nombre;
     }
 
     set nombre(nombre) {
-        this._nombre = nombre;
+        this.nombre = nombre;
     }
 
     get direccion() {
-        return this._direccion;
+        return this.direccion;
     }
 
     set direccion(direccion) {
-        this._direccion = direccion;
+        this.direccion = direccion;
     }
 
     get automoviles() {
-        return this._automoviles;
+        return this.automoviles;
     }
 
     set automoviles(automoviles) {
-        this._automoviles = automoviles;
+        this.automoviles = automoviles;
     }
 
     // Añadir un automóvil
     agregarAutomovil(automovil) {
-        this._automoviles.push(automovil);
+        this.automoviles.push(automovil);
     }
 }
 
@@ -45,103 +45,103 @@ class Automovil {
             throw new Error("No se puede instanciar la clase Automovil");
         }
 
-        this._matricula = matricula;
-        this._marca = marca;
-        this._modelo = modelo;
+        this.matricula = matricula;
+        this.marca = marca;
+        this.modelo = modelo;
     }
 
     // Getters
     get matricula() {
-        return this._matricula;
+        return this.matricula;
     }
 
     get coche() {
-        return this._coche;
+        return this.coche;
     }
 
     get modelo() {
-        return this._modelo;
+        return this.modelo;
     }
 
     // Setters
     set matricula(matricula) {
-        this._matricula = matricula;
+        this.matricula = matricula;
     }
 
     set coche(coche) {
-        this._coche = coche;
+        this.coche = coche;
     }
 
     set modelo(modelo) {
-        this._modelo = modelo;
+        this.modelo = modelo;
     }
 }
 
 
 class Coche {
     constructor(potencia, puertas, capacidadMaletero) {
-        this._potencia = potencia;
-        this._puertas = puertas;
-        this._capacidadMaletero = capacidadMaletero;
+        this.potencia = potencia;
+        this.puertas = puertas;
+        this.capacidadMaletero = capacidadMaletero;
     }
 
     get potencia() {
-        return this._potencia;
+        return this.potencia;
     }
 
     set potencia(potencia) {
-        this._potencia = potencia;
+        this.potencia = potencia;
     }
 
     get puertas() {
-        return this._puertas;
+        return this.puertas;
     }
 
     set puertas(puertas) {
-        this._puertas = puertas;
+        this.puertas = puertas;
     }
 
     get capacidadMaletero() {
-        return this._capacidadMaletero;
+        return this.capacidadMaletero;
     }
 
     set capacidadMaletero(capacidadMaletero) {
-        this._capacidadMaletero = capacidadMaletero;
+        this.capacidadMaletero = capacidadMaletero;
     }
 
     toString() {
-        return `Coche: Potencia: ${this._potencia} CV, 
-                Puertas: ${this._puertas}, 
-                Capacidad del maletero: ${this._capacidadMaletero} litros`;
+        return `Coche: Potencia: ${this.potencia} CV, 
+                Puertas: ${this.puertas}, 
+                Capacidad del maletero: ${this.capacidadMaletero} litros`;
     }
 }
 
 
 class Motocicleta {
     constructor(portaequipajes, cilindrada) {
-        this._portaequipajes = portaequipajes;
-        this._cilindrada = cilindrada;
+        this.portaequipajes = portaequipajes;
+        this.cilindrada = cilindrada;
     }
 
     get portaequipajes() {
-        return this._portaequipajes;
+        return this.portaequipajes;
     }
 
     set portaequipajes(portaequipajes) {
-        this._portaequipajes = portaequipajes;
+        this.portaequipajes = portaequipajes;
     }
 
     get cilindrada() {
-        return this._cilindrada;
+        return this.cilindrada;
     }
 
     set cilindrada(cilindrada) {
-        this._cilindrada = cilindrada;
+        this.cilindrada = cilindrada;
     }
 
     toString() {
-        return `Motocicleta: Portaequipajes: ${this._portaequipajes ? "Sí" : "No"}, 
-                Cilindrada: ${this._cilindrada} cc`;
+        return `Motocicleta: Portaequipajes: ${this.portaequipajes ? "Sí" : "No"}, 
+                Cilindrada: ${this.cilindrada} cc`;
     }
 }
 
